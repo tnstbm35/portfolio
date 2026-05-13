@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Naoya Tsuji</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .lang-toggle {
+      display: flex;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .lang-toggle__btn {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-muted);
+      cursor: pointer;
+      font-family: var(--font-primary);
+      transition: all 0.2s ease;
+    }
+
+    .lang-toggle__btn:first-child {
+      border-right: none;
+    }
+
+    .lang-toggle__btn.active {
+      background: var(--color-text);
+      color: var(--color-bg);
+      border-color: var(--color-text);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Naoya Tsuji</a>
+    <div class="nav__right">
+      <ul class="nav__links">
+        <li><a href="works/index.html">Works</a></li>
+        <li><a href="showcase/index.html">Showcase</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu__links">
+      <li><a href="works/index.html">Works</a></li>
+      <li><a href="showcase/index.html">Showcase</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="about-wrap page-fade">
+
+    <div class="about__photo">
+      <img src="images/profile.jpg" alt="Naoya Tsuji" />
+    </div>
+
+    <div class="about__info">
+      <h1 class="about__name-en">Naoya Tsuji</h1>
+      <p class="about__name-jp">辻 直哉</p>
+
+      <p class="about__tagline">documentary for wedding, education, international exchange, and more.</p>
+
+      <div class="about__timeline">
+        <div class="about__timeline-item">
+          <span class="about__timeline-year">1997</span>
+          <span class="about__timeline-desc">香川県三木町出身</span>
+        </div>
+        <div class="about__timeline-item">
+          <span class="about__timeline-year">2020</span>
+          <span class="about__timeline-desc">関西大学文学部英米文学英語学専修 卒業</span>
+        </div>
+        <div class="about__timeline-item">
+          <span class="about__timeline-year">2021 / 02</span>
+          <span class="about__timeline-desc">Master of Education (TESOL), University of Wollongong 入学</span>
+        </div>
+        <div class="about__timeline-item">
+          <span class="about__timeline-year">2021 / 03</span>
+          <span class="about__timeline-desc">Master of Education (TESOL), University of Wollongong 中退</span>
+        </div>
+        <div class="about__timeline-item">
+          <span class="about__timeline-year">2021 / 04 —</span>
+          <span class="about__timeline-desc">フリーランスとして活動</span>
+        </div>
+      </div>
+
+      <div class="about__sns">
+        <a href="https://www.instagram.com/naoyatsuji_/" target="_blank" rel="noopener">instagram</a>
+        <span class="about__sns-sep">/</span>
+        <a href="https://twitter.com/naoyatsuji_eos" target="_blank" rel="noopener">X</a>
+        <span class="about__sns-sep">/</span>
+        <a href="https://www.threads.com/@naoyatsuji_" target="_blank" rel="noopener">threads</a>
+        <span class="about__sns-sep">/</span>
+        <a href="https://note.mu/naoyatsuji_3" target="_blank" rel="noopener">note</a>
+        <span class="about__sns-sep">/</span>
+        <a href="https://www.instagram.com/profonde.film/" target="_blank" rel="noopener">instagram (profonde)</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© 2026 Naoya Tsuji. All rights reserved.</p>
+    <span class="footer__top">Back to Top ↑</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const btns = document.querySelectorAll('.lang-toggle__btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lang-en, .lang-ja').forEach(el => {
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('.lang-' + lang).forEach(el => {
+          el.style.display = '';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

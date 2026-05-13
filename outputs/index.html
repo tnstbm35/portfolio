@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naoya Tsuji</title>
+  <meta name="description" content="Portfolio of Naoya Tsuji." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav nav--transparent">
+    <a href="index.html" class="nav__logo">Naoya Tsuji</a>
+    <ul class="nav__links">
+      <li><a href="works/index.html">Works</a></li>
+      <li><a href="showcase/index.html">Showcase</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu__links">
+      <li><a href="works/index.html">Works</a></li>
+      <li><a href="showcase/index.html">Showcase</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO (video only) -->
+  <section class="hero">
+    <div class="hero__video-wrap">
+      <!--
+        動画ファイルを videos/ フォルダに置いて src を差し替えてください。
+        スライドを増やす場合は .hero__slide ブロックを複製してください。
+      -->
+      <div class="hero__slide active" data-duration="4000">
+        <video autoplay muted playsinline preload="auto">
+          <source src="videos/hero1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__slide" data-duration="3800">
+        <video muted playsinline preload="auto">
+          <source src="videos/hero2.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__slide" data-duration="10000">
+        <video muted playsinline preload="auto">
+          <source src="videos/hero3.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__slide" data-duration="4000">
+        <video muted playsinline preload="auto">
+          <source src="videos/hero4.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__slide" data-duration="4000">
+        <video muted playsinline preload="auto">
+          <source src="videos/hero5.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <!-- モバイル専用ヒーロー内ナビ -->
+    <nav class="hero__mobile-nav">
+      <a href="works/index.html">Works</a>
+      <a href="showcase/index.html">Showcase</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

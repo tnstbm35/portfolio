@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works — Naoya Tsuji</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .works-lp {
+      padding-top: calc(var(--nav-height) + 80px);
+      padding-bottom: 100px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .works-lp__title {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      margin-bottom: 80px;
+    }
+
+    /* Section (Movie / Still) */
+    .works-section {
+      margin-bottom: 100px;
+    }
+
+    .works-section__label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .works-section__label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* Client block */
+    .works-client {
+      margin-bottom: 72px;
+    }
+
+    .works-client__name {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    /* Video grid: 3 columns */
+    .works-client__videos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .works-client__videos .video-item {
+      aspect-ratio: 16/9;
+    }
+
+    .works-client__videos .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Still: masonry columns */
+    .still-masonry {
+      columns: 3;
+      column-gap: 16px;
+    }
+
+    .still-masonry__item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .still-masonry__item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .still-masonry { columns: 2; }
+    }
+
+    @media (max-width: 768px) {
+      .works-lp {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .works-client__videos {
+        grid-template-columns: 1fr;
+      }
+      .still-masonry { columns: 2; column-gap: 10px; }
+      .still-masonry__item { margin-bottom: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .still-masonry { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav__logo">Naoya Tsuji</a>
+    <div class="nav__right">
+      <ul class="nav__links">
+        <li><a href="index.html" class="active">Works</a></li>
+        <li><a href="../showcase/index.html">Showcase</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu__links">
+      <li><a href="index.html" class="active">Works</a></li>
+      <li><a href="../showcase/index.html">Showcase</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="works-lp page-fade">
+    <h1 class="works-lp__title">Works</h1>
+
+    <!-- ===== MOVIE ===== -->
+    <section class="works-section">
+      <p class="works-section__label">Movie</p>
+
+      <div class="works-client">
+        <p class="works-client__name">ASEF</p>
+        <p class="works-client__genre">Event Highlight / Interview</p>
+        <div class="works-client__videos">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/Z2jf5h_lAVo?rel=0&modestbranding=1"
+              title="ASEF 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/fdLn2B1uhgI?rel=0&modestbranding=1"
+              title="ASEF 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/Q9yHItJso00?rel=0&modestbranding=1"
+              title="ASEF 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Camera / Edit / Color</p>
+      </div>
+
+      <div class="works-client">
+        <p class="works-client__name">愛昇殿</p>
+        <p class="works-client__genre">CM</p>
+        <div class="works-client__videos">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/8y4fwTJsI_w?rel=0&modestbranding=1"
+              title="愛昇殿 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/xA7TYTypfcY?rel=0&modestbranding=1"
+              title="愛昇殿 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/_JMaB6DMOpk?rel=0&modestbranding=1"
+              title="愛昇殿 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Direction / Camera / Edit / Color</p>
+      </div>
+    </section>
+
+    <!-- ===== STILL ===== -->
+    <section class="works-section">
+      <p class="works-section__label">Still</p>
+
+      <div class="still-masonry">
+        <div class="still-masonry__item"><img src="../images/134A0012.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A0283.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A0287 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A0595 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A0698.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A1161.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A2377.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A6535.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A7836.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A8387 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A8892.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A8918.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A8968.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/DSCF6202.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000003 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000062.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000077.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000118.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000171 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000283 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000369 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000372.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000564 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000597 1.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000641.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/134A1860.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/1O4A0179-2.jpg" alt="" loading="lazy" /></div>
+        <div class="still-masonry__item"><img src="../images/L1000122.jpg" alt="" loading="lazy" /></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PROFONDE -->
+  <section class="profonde-section">
+    <p class="section__label" style="justify-content:center; max-width:200px; margin:0 auto 0;">wedding documentary</p>
+    <h2 class="profonde-title">profonde</h2>
+
+    <div class="behold-wrap">
+      <behold-widget feed-id="OXmebmpUCBrdav0rOxk1"></behold-widget>
+      <script>
+        (() => {
+          const d=document,s=d.createElement("script");s.type="module";
+          s.src="https://w.behold.so/widget.js";d.head.append(s);
+        })();
+      </script>
+    </div>
+
+    <a href="https://www.instagram.com/profonde.film/" target="_blank" rel="noopener"
+       class="btn-outline" style="margin-top:40px;">
+      View on Instagram →
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copy">© 2026 Naoya Tsuji. All rights reserved.</p>
+    <span class="footer__top">Back to Top ↑</span>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

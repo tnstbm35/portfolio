@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showcase — Naoya Tsuji</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .showcase-lp {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: calc(var(--nav-height) + 80px) 40px 100px;
+    }
+
+    .showcase-lp__title {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      margin-bottom: 80px;
+    }
+
+    .showcase-client {
+      margin-bottom: 72px;
+    }
+
+    .showcase-client__name {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .showcase-client__videos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .showcase-client__videos.cols-1 {
+      grid-template-columns: 1fr;
+      max-width: 640px;
+    }
+
+    .showcase-client__videos.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-item {
+      aspect-ratio: 16/9;
+      background: #e8e8e8;
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-item--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    /* Shorts grid (縦型 9:16) */
+    .showcase-client__shorts {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .short-item {
+      aspect-ratio: 9/16;
+      background: #e8e8e8;
+    }
+
+    .short-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .short-item--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 768px) {
+      .showcase-lp {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .showcase-client__videos,
+      .showcase-client__videos.cols-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav__logo">Naoya Tsuji</a>
+    <div class="nav__right">
+      <ul class="nav__links">
+        <li><a href="../works/index.html">Works</a></li>
+        <li><a href="index.html" class="active">Showcase</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu__links">
+      <li><a href="../works/index.html">Works</a></li>
+      <li><a href="index.html" class="active">Showcase</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PASSWORD GATE -->
+  <div id="gate" class="gate">
+    <p class="gate__title">Showcase</p>
+    <p class="gate__subtitle">
+      This section is password-protected.
+    </p>
+    <p class="gate__desc">
+      Showcaseには限定公開の実績を掲載しております。閲覧にはパスワードが必要となるため、ご要望の方は<a href="../contact.html">CONTACT</a>から「Showcaseのパスワード希望」をお問い合わせください。既にパスワードをお持ちの方はこちらからご入力ください。
+    </p>
+    <form class="gate__form" id="gate-form">
+      <input
+        id="gate-input"
+        class="gate__input"
+        type="password"
+        maxlength="10"
+        placeholder="••••"
+        autocomplete="off"
+        aria-label="Password"
+      />
+      <button type="submit" class="gate__btn">Enter</button>
+    </form>
+    <p id="gate-error" class="gate__error">Incorrect password.</p>
+  </div>
+
+  <!-- SHOWCASE CONTENT -->
+  <div id="showcase-content" class="showcase-content">
+    <div class="showcase-lp page-fade">
+      <h1 class="showcase-lp__title">Showcase</h1>
+
+      <div class="showcase-client">
+        <p class="showcase-client__name">関西大学 併設校留学プログラム</p>
+        <p class="works-client__genre">Documentary</p>
+        <div class="showcase-client__videos cols-2">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/m8QZL7xWrrs?rel=0&modestbranding=1"
+              title="留学プログラム 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/9Q4sH8Em97Y?rel=0&modestbranding=1"
+              title="留学プログラム 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Direction / Camera / Edit / Color</p>
+      </div>
+
+      <div class="showcase-client">
+        <p class="showcase-client__name">関西大学国際学生寮</p>
+        <p class="works-client__genre">Documentary / Interview</p>
+        <div class="showcase-client__videos">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/fBqujW07rpg?rel=0&modestbranding=1"
+              title="国際学生寮 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/-5z66nC1Wwc?rel=0&modestbranding=1"
+              title="国際学生寮 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/W2gDod27EeQ?rel=0&modestbranding=1"
+              title="国際学生寮 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/sURl1XemCl4?rel=0&modestbranding=1"
+              title="国際学生寮 4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/a_CgjHXPrO0?rel=0&modestbranding=1"
+              title="国際学生寮 5"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/ZRJ0HSy_m1s?rel=0&modestbranding=1"
+              title="国際学生寮 6"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <!-- Shorts (縦型) — URLが揃ったら short-item--placeholder を iframe に差し替えてください -->
+        <div class="showcase-client__shorts">
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/lpRzWW4EGOI?rel=0&modestbranding=1"
+              title="Short 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/O5Np64hTrog?rel=0&modestbranding=1"
+              title="Short 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/fYx6GqJCup8?rel=0&modestbranding=1"
+              title="Short 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/56A_eNK9G-I?rel=0&modestbranding=1"
+              title="Short 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/IObXPO6Ykzo?rel=0&modestbranding=1"
+              title="Short 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/cMLQVrPxY1M?rel=0&modestbranding=1"
+              title="Short 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/92fx-Kd-Cm4?rel=0&modestbranding=1"
+              title="Short 7" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="short-item">
+            <iframe src="https://www.youtube.com/embed/q-t0gQTieBs?rel=0&modestbranding=1"
+              title="Short 8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Direction / Camera / Edit / Color</p>
+      </div>
+
+      <div class="showcase-client">
+        <p class="showcase-client__name">Eau-de-Vie Wedding</p>
+        <p class="works-client__genre">Commercial</p>
+        <div class="showcase-client__videos cols-2">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/BCHXw0Gpr9M?rel=0&modestbranding=1"
+              title="Eau-de-Vie 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/X_HfWM4a3rE?rel=0&modestbranding=1"
+              title="Eau-de-Vie 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Direction / Camera / Edit / Color</p>
+      </div>
+
+      <div class="showcase-client">
+        <p class="showcase-client__name">AEON</p>
+        <p class="works-client__genre">Endroll</p>
+        <div class="showcase-client__videos cols-2">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/4eM6OcWWvnY?rel=0&modestbranding=1"
+              title="AEON 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/31Rx4p-ghKw?rel=0&modestbranding=1"
+              title="AEON 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Camera / Edit / Color</p>
+      </div>
+
+      <div class="showcase-client">
+        <p class="showcase-client__name">BOVA</p>
+        <p class="works-client__genre">Short Film</p>
+        <div class="showcase-client__videos cols-1">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/JM-5J9U1RHQ?rel=0&modestbranding=1"
+              title="BOVA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="works-client__credit">Camera / Edit / Color</p>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p class="footer__copy">© 2026 Naoya Tsuji. All rights reserved.</p>
+      <span class="footer__top">Back to Top ↑</span>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
