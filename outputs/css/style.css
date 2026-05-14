@@ -968,6 +968,20 @@ img {
 }
 
 /* =========================================
+   LIGHTBOX
+   ========================================= */
+
+/* 写真にカーソル＋ホバー効果（CSSはここだけ、残りはJS管理） */
+.still-masonry__item {
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.still-masonry__item:hover {
+  opacity: 0.82;
+}
+
+/* =========================================
    PAGE TRANSITION
    ========================================= */
 
