@@ -80,17 +80,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.getElementById('mobile-menu');
   if (!hamburger || !mobileMenu) return;
 
+  let _scrollY = 0;
+
+  function lockScroll() {
+    _scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${_scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, _scrollY);
+  }
+
   hamburger.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('active');
     hamburger.classList.toggle('active', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
   });
 
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
       hamburger.classList.remove('active');
-      document.body.style.overflow = '';
+      unlockScroll();
     });
   });
 });
@@ -217,6 +239,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ---------- Page fade-in ---------- */
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.add('page-fade');
-});
+/* page-fade は各ページの <main> に直接付与しているため body への追加は不要 */
