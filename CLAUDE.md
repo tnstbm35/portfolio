@@ -1,5 +1,12 @@
 # Naoya Tsuji Portfolio — CLAUDE.md
 
+## 作業場所
+- **ローカルファイル（編集はここ）**: `~/Developer/portfolio`
+- **このCLAUDE.mdはObsidian確認用**。実際の作業は必ず `~/Developer/portfolio` で行うこと。
+- 編集後は `git push` で GitHub に反映 → GitHub Actions が自動デプロイ（1〜3分）
+
+---
+
 ## プロジェクト概要
 映像作家・フォトグラファー 辻直哉のポートフォリオサイト。  
 静的HTML/CSS/JSで構築。GitHub Pages でホスティング。カスタムドメイン: **naoyatsuji.com**
